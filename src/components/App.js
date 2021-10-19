@@ -5,16 +5,6 @@ import { Main } from './Main';
 import { MainHeader } from './MainHeader';
 import { Search } from './SearchBar';
 
-// const Main = styled.main`
-//   background: ${({ theme }) => theme.body};
-//   border-radius: 15px;
-//   padding: 1.5rem;
-//   box-shadow: ${({ theme }) => theme.shadow};
-//   @media (min-width: 768px) {
-//     padding: 2.5rem;
-//   }
-// `;
-
 export const App = () => {
   const [theme, setTheme] = useState('light');
   const [username, setUsername] = useState('');
