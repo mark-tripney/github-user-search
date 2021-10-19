@@ -28,7 +28,7 @@ const Input = styled.input`
   font-size: 0.8125em;
   color: ${({ theme }) => theme.inputColor};
   &:focus {
-    outline: thin dotted;
+    outline: none;
   }
   &::placeholder {
     color: ${({ theme }) => theme.placeHolder};
