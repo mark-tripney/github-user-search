@@ -45,6 +45,8 @@ const GeneralInfo = styled.div`
 `;
 
 const Username = styled.h2`
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
   font-weight: 700;
   font-size: 1em;
   margin: 0;
