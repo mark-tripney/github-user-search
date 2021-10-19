@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Bio } from './Bio';
 import { General } from './General';
+import { UserStats } from './Stats';
 
 const MainContainer = styled.main`
   background: ${({ theme }) => theme.sectionBackground};
@@ -29,6 +30,7 @@ export const Main = ({ userInfo }) => {
     <MainContainer>
       <General userInfo={userInfo} />
       <Bio bio={userInfo.bio} />
+      <UserStats userInfo={userInfo} />
     </MainContainer>
   );
 };
