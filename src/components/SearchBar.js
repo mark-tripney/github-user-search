@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Spyglass from '../images/icon-search.svg';
 
@@ -15,8 +14,9 @@ const SearchBar = styled.form`
   padding-left: 1rem;
   box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 1rem;
-  @media (min-width: 768) {
+  @media (min-width: 768px) {
     padding-left: 1rem;
+    margin-bottom: 1.5rem;
   }
 `;
 

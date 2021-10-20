@@ -10,7 +10,7 @@ const BioText = styled.div`
     font-size: 0.9375em;
   }
   @media (min-width: 900px) {
-    margin-top: -1.5em;
+    margin-top: -2.5em;
   }
 `;
 
