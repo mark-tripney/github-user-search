@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles, lightTheme, darkTheme } from '../style/theme';
 import { Main } from './Main';
@@ -11,6 +11,27 @@ export const App = () => {
   const [userInfo, setUserInfo] = useState({});
   const [userFound, setUserFound] = useState(true);
   const isDarkTheme = theme === 'dark';
+
+  useEffect(() => {
+    // Populate Octocat data on app load
+    fetch(`https://api.github.com/users/octocat`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUserInfo(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDarkTheme =
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (storedTheme && ['dark', 'light'].includes(storedTheme)) {
+      setTheme(storedTheme);
+    } else if (prefersDarkTheme) {
+      setTheme('dark');
+    }
+  }, []);
 
   // Handle user's search field input
   const handleInputChange = (e) => {
@@ -39,7 +60,11 @@ export const App = () => {
   };
 
   // Light/dark theme toggle
-  const handleToggleTheme = () => setTheme(isDarkTheme ? 'light' : 'dark');
+  const handleToggleTheme = () => {
+    const currentTheme = isDarkTheme ? 'light' : 'dark';
+    setTheme(currentTheme);
+    localStorage.setItem('theme', currentTheme);
+  };
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
