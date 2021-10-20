@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Spyglass from '../images/icon-search.svg';
 
@@ -15,7 +15,7 @@ const SearchBar = styled.form`
   padding-left: 1rem;
   box-shadow: ${({ theme }) => theme.shadow};
   margin-bottom: 1rem;
-  @media (min-width: 600px) {
+  @media (min-width: 768) {
     padding-left: 1rem;
   }
 `;
@@ -37,7 +37,7 @@ const Input = styled.input`
   &:hover {
     cursor: pointer;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     font-size: 1.125em;
     margin-left: 0.5rem;
   }
@@ -49,7 +49,7 @@ const NoResultsMsg = styled.p`
   font-weight: 700;
   margin: 0 0 0 0.25rem;
   white-space: nowrap;
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     font-size: 1.125em;
   }
 `;
@@ -66,7 +66,7 @@ const Button = styled.button`
   &:hover {
     background-color: #60abff;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     font-size: 1em;
     padding: 0.8125rem 1.5rem;
   }

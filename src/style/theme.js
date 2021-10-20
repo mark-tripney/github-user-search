@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Space Mono', monospace;
   }
 
   html {
@@ -12,7 +12,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    margin-top: 1rem;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: background 0.2s ease-in, color 0.2s ease-in;
@@ -38,6 +37,8 @@ export const lightTheme = {
   inputColor: '#222731',
   placeHolder: '#4b6a9b',
   usernameColor: '#2b3442',
+  footerImgColor: '#4b6a9B',
+  footerTextColor: '#4b6a9B',
   statDataColor: '#000',
 };
 
@@ -50,5 +51,7 @@ export const darkTheme = {
   sectionBackground: '#1e2a47',
   inputColor: '#fff',
   usernameColor: '#fff',
+  footerImgColor: '#fff',
+  footerTextColor: '#fff',
   statDataColor: '#fff',
 };

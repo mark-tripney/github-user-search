@@ -7,8 +7,8 @@ const StatsContainer = styled.div`
   background-color: ${({ theme }) => theme.body};
   border-radius: 10px;
   padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  @media (min-width: 600px) {
+  margin: 1rem 0 2rem;
+  @media (min-width: 768px) {
     justify-content: space-evenly;
   }
 `;
@@ -37,7 +37,7 @@ const StatData = styled.p`
   font-weight: 700;
   font-size: 1em;
   margin: 0;
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     font-size: 1.375em;
   } ;
 `;

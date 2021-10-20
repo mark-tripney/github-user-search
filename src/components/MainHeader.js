@@ -6,11 +6,14 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0;
+  margin: 2rem 0;
+  p,
+  h1 {
+    margin: 0;
+  }
   h1 {
     color: ${({ theme }) => theme.headingH1};
-    font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+    font-size: 1.625em;
     font-weight: 900;
   }
 `;
@@ -27,6 +30,10 @@ const ViewModeContainer = styled.div`
   }
   p {
     margin-right: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 0.8125em;
+    font-weight: 700;
   }
 `;
 

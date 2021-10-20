@@ -15,6 +15,8 @@ export const App = () => {
   // Handle user's search field input
   const handleInputChange = (e) => {
     setUsername(e.target.value);
+    // TODO: Optimise this! Set userFound once, on first input change.
+    setUserFound(true);
   };
 
   // Look for data when Search btn is clicked
@@ -32,7 +34,6 @@ export const App = () => {
         setUserFound(true);
       })
       .catch((error) => {
-        console.log('User not found');
         setUserFound(false);
       });
   };

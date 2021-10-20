@@ -4,9 +4,13 @@ const Avatar = styled.img`
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     height: 117px;
     width: 117px;
+    margin-right: 2rem;
+  }
+  @media (min-width: 900px) {
+    margin-right: 1rem;
   }
 `;
 
@@ -22,9 +26,22 @@ const GeneralInfo = styled.div`
     justify-content: center;
     p {
       margin: 0;
+      font-size: 0.8125em;
+    }
+    .login {
+      color: #0079ff;
+    }
+    @media (min-width: 768px) {
+      justify-content: space-evenly;
+      .login {
+        font-size: 1em;
+      }
+      .join-date {
+        font-size: 0.935em;
+      }
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .general-info-text {
       margin-top: 0.25em;
       flex-direction: row;
@@ -38,20 +55,16 @@ const GeneralInfo = styled.div`
       flex: 0 0 100%;
       margin-top: 0.25em;
     }
-    /* .join-date {
-      align-self: center;
-    } */
   }
 `;
 
 const Username = styled.h2`
-  font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
   font-weight: 700;
   font-size: 1em;
   margin: 0;
   color: ${({ theme }) => theme.usernameColor};
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     font-size: 1.625em;
   }
 `;
