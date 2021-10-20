@@ -28,12 +28,14 @@ const GeneralInfo = styled.div`
       margin: 0;
       font-size: 0.8125em;
     }
-    .login {
+    a.login,
+    a.login:visited {
+      font-size: 0.8125em;
       color: #0079ff;
     }
     @media (min-width: 768px) {
       justify-content: space-evenly;
-      .login {
+      a.login {
         font-size: 1em;
       }
       .join-date {
@@ -77,7 +79,14 @@ export const General = ({ userInfo }) => {
       <Avatar src={userInfo.avatar_url} alt="User's avatar" />
       <div className="general-info-text">
         <Username>{userInfo.name}</Username>
-        <p className="login">@{userInfo.login}</p>
+        <a
+          className="login"
+          href={`https://github.com/${userInfo.login}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          @{userInfo.login}
+        </a>
         <p className="join-date">
           {`Joined ${date.getDate()} ${month} ${date.getFullYear()}`}
         </p>

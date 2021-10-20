@@ -48,11 +48,11 @@ export const Footer = (props) => {
       </FooterInfoContainer>
       <FooterInfoContainer opaque={props.userInfo.blog}>
         <Website alt="Wesbite icon (a linked chain)" />
-        <FooterInfo opaque={props.userInfo.blog} data={props.userInfo.blog} />
+        <FooterInfo data={props.userInfo.blog} isLink />
       </FooterInfoContainer>
       <FooterInfoContainer opaque={props.userInfo.twitter_username}>
         <Twitter alt="Twitter logo" />
-        <FooterInfo data={props.userInfo.twitter_username} />
+        <FooterInfo data={props.userInfo.twitter_username} isTwitter />
       </FooterInfoContainer>
       <FooterInfoContainer opaque={props.userInfo.company}>
         <Company alt="Company icon (an office block)" />
