@@ -6,6 +6,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0;
   h1 {
     color: ${({ theme }) => theme.headingH1};
     font-family: 'Roboto', sans-serif;

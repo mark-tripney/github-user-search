@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Bio } from './Bio';
+import { Footer } from './Footer';
 import { General } from './General';
 import { UserStats } from './Stats';
 
@@ -15,13 +16,15 @@ const MainContainer = styled.main`
   grid-template-areas:
     'general general'
     'bio bio'
-    'stats stats';
+    'stats stats'
+    'footer footer';
   @media (min-width: 600px) {
     grid-template-columns: 117px 1fr;
     grid-template-areas:
       'general general'
       '. bio'
-      '. stats';
+      '. stats'
+      '. footer';
   }
 `;
 
@@ -31,6 +34,7 @@ export const Main = ({ userInfo }) => {
       <General userInfo={userInfo} />
       <Bio bio={userInfo.bio} />
       <UserStats userInfo={userInfo} />
+      <Footer userInfo={userInfo} />
     </MainContainer>
   );
 };

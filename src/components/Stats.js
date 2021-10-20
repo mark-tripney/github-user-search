@@ -45,9 +45,6 @@ const StatData = styled.p`
 export const UserStats = (props) => {
   return (
     <StatsContainer>
-      {/* <StatPairing statTitle="Repos" statData={props.userInfo.public_repos} />
-      <StatPairing statTitle="Followers" statData={props.userInfo.followers} />
-      <StatPairing statTitle="Following" statData={props.userInfo.following} /> */}
       <StatPairing>
         <StatTitle>Repos</StatTitle>
         <StatData>{props.userInfo.public_repos}</StatData>

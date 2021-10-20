@@ -57,13 +57,17 @@ const Username = styled.h2`
 `;
 
 export const General = ({ userInfo }) => {
+  const date = new Date(userInfo.created_at);
+  const month = date.toLocaleString('default', { month: 'short' });
   return (
     <GeneralInfo>
       <Avatar src={userInfo.avatar_url} alt="User's avatar" />
       <div className="general-info-text">
         <Username>{userInfo.name}</Username>
-        <p className="login">{userInfo.login}</p>
-        <p className="join-date">Joined 19 Oct 2021</p>
+        <p className="login">@{userInfo.login}</p>
+        <p className="join-date">
+          {`Joined ${date.getDate()} ${month} ${date.getFullYear()}`}
+        </p>
       </div>
     </GeneralInfo>
   );
