@@ -1,16 +1,17 @@
 import styled from 'styled-components';
-import MapPin from '../images/icon-location.svg';
-import Website from '../images/icon-website.svg';
-import Twitter from '../images/icon-twitter.svg';
-import Company from '../images/icon-company.svg';
+import { ReactComponent as MapPin } from '../images/icon-location.svg';
+import { ReactComponent as Website } from '../images/icon-website.svg';
+import { ReactComponent as Twitter } from '../images/icon-twitter.svg';
+import { ReactComponent as Company } from '../images/icon-company.svg';
 
 const FooterContainer = styled.footer`
   display: grid;
   grid-area: footer;
   grid-template-columns: 1fr;
   align-items: center;
-  /* gap: 1em 1em; */
-  @media (min-width: 600px) {
+  gap: 1em 1em;
+  margin-bottom: 3rem;
+  @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 900px) {
@@ -18,22 +19,24 @@ const FooterContainer = styled.footer`
   }
 `;
 
-const FooterInfoContainer = styled.div.attrs(() => ({
-  className: 'grid-item',
-}))`
+const FooterInfoContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.8125em;
-`;
-
-const FooterImg = styled.img`
-  opacity: ${(props) => (!props.opaque ? '0.5' : '1')};
+  row-gap: 1em;
+  svg path {
+    fill: ${({ theme }) => theme.footerImgColor};
+  }
+  svg {
+    opacity: ${(props) => (!props.opaque ? '0.5' : '1')};
+  }
 `;
 
 const FooterInfoText = styled.p`
   opacity: ${(props) => (!props.opaque ? '0.5' : '1')};
   font-size: 0.8125em;
-  @media (min-width: 600px) {
+  margin: 0;
+  @media (min-width: 768px) {
     font-size: 0.9375em;
   }
 `;
@@ -41,44 +44,32 @@ const FooterInfoText = styled.p`
 export const Footer = (props) => {
   return (
     <FooterContainer>
-      <FooterInfoContainer>
-        <FooterImg
-          src={MapPin}
-          alt="Map-pin icon"
-          opaque={props.userInfo.location}
-        />
-        <FooterInfoText opaque={props.info}>
+      <FooterInfoContainer opaque={props.userInfo.location}>
+        <MapPin alt="Map-pin icon" opaque={props.userInfo.location} />
+        <FooterInfoText opaque={props.userInfo.location}>
           {props.userInfo.location ? props.userInfo.location : 'Not available'}
         </FooterInfoText>
       </FooterInfoContainer>
 
-      <FooterInfoContainer>
-        <FooterImg src={Website} alt="Link icon" opaque={props.userInfo.blog} />
-        <FooterInfoText opaque={props.info}>
+      <FooterInfoContainer opaque={props.userInfo.blog}>
+        <Website alt="Link icon" />
+        <FooterInfoText opaque={props.userInfo.blog}>
           {props.userInfo.blog ? props.userInfo.blog : 'Not available'}
         </FooterInfoText>
       </FooterInfoContainer>
 
-      <FooterInfoContainer>
-        <FooterImg
-          src={Twitter}
-          alt="Twitter icon"
-          opaque={props.userInfo.twitter_username}
-        />
-        <FooterInfoText opaque={props.info}>
+      <FooterInfoContainer opaque={props.userInfo.twitter_username}>
+        <Twitter alt="Twitter icon" />
+        <FooterInfoText opaque={props.userInfo.twitter_username}>
           {props.userInfo.twitter_username
             ? props.userInfo.twitter_username
             : 'Not available'}
         </FooterInfoText>
       </FooterInfoContainer>
 
-      <FooterInfoContainer>
-        <FooterImg
-          src={Company}
-          alt="Company icon"
-          opaque={props.userInfo.company}
-        />
-        <FooterInfoText opaque={props.info}>
+      <FooterInfoContainer opaque={props.userInfo.company}>
+        <Company alt="Company icon" />
+        <FooterInfoText opaque={props.userInfo.company}>
           {props.userInfo.company ? props.userInfo.company : 'Not available'}
         </FooterInfoText>
       </FooterInfoContainer>
