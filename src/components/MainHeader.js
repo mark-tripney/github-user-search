@@ -6,7 +6,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
   p,
   h1 {
     margin: 0;
@@ -15,6 +15,9 @@ const Header = styled.header`
     color: ${({ theme }) => theme.headingH1};
     font-size: 1.625em;
     font-weight: 900;
+  }
+  @media (min-width: 768px) {
+    margin: 2rem 0 1rem;
   }
 `;
 
