@@ -22,8 +22,13 @@ const FooterInfoLink = styled.a`
 
 export const FooterInfo = (props) => {
   if (props.isLink && props.data) {
+    let link = props.data;
+    const prefix = 'https://';
+    if (props.data.substr(0, prefix.length) !== prefix) {
+      link = prefix + props.data;
+    }
     return (
-      <FooterInfoLink href={props.data} target="_blank">
+      <FooterInfoLink href={link} target="_blank">
         {props.data}
       </FooterInfoLink>
     );
