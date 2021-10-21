@@ -6,7 +6,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem 0 1rem;
   p,
   h1 {
     margin: 0;
