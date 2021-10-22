@@ -4,9 +4,12 @@ const Avatar = styled.img`
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     height: 117px;
     width: 117px;
+    margin-right: 1rem;
+  }
+  @media (min-width: 748px) {
     margin-right: 2rem;
   }
   @media (min-width: 900px) {
@@ -23,7 +26,7 @@ const GeneralInfo = styled.div`
   .general-info-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     p {
       margin: 0;
       font-size: 0.8125em;
@@ -33,7 +36,7 @@ const GeneralInfo = styled.div`
       font-size: 0.8125em;
       color: #0079ff;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 736px) {
       justify-content: space-evenly;
       a.login {
         font-size: 1em;
@@ -66,7 +69,7 @@ const Username = styled.h2`
   font-size: 1em;
   margin: 0;
   color: ${({ theme }) => theme.usernameColor};
-  @media (min-width: 768px) {
+  @media (min-width: 736px) {
     font-size: 1.625em;
   }
 `;

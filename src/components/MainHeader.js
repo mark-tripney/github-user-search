@@ -6,7 +6,10 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1.5rem;
+  @media (min-width: 768px) {
+    margin-top: 4rem;
+  }
   p,
   h1 {
     margin: 0;

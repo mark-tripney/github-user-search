@@ -15,8 +15,11 @@ const StatTitle = styled.h3`
   font-weight: 400;
   font-size: 0.6875em;
   margin: 0;
-  @media (min-width: 450px) {
+  @media (min-width: 414px) {
     font-size: 0.8125em;
+  }
+  @media (min-width: 600px) {
+    font-size: 0.9375em;
   } ;
 `;
 
@@ -24,7 +27,7 @@ const StatData = styled.p`
   font-weight: 700;
   font-size: 1em;
   margin: 0;
-  @media (min-width: 768px) {
+  @media (min-width: 736px) {
     font-size: 1.375em;
   } ;
 `;

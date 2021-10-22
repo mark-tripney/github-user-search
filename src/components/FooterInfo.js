@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FooterInfoText = styled.p`
   font-size: 0.8125em;
   margin: 0;
-  @media (min-width: 768px) {
+  @media (min-width: 736px) {
     font-size: 0.9375em;
   }
 `;
@@ -15,7 +15,7 @@ const FooterInfoLink = styled.a`
   &:visited {
     color: ${({ theme }) => theme.text};
   }
-  @media (min-width: 768px) {
+  @media (min-width: 736px) {
     font-size: 0.9375em;
   }
 `;

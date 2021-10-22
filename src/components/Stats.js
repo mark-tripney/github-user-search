@@ -9,7 +9,7 @@ const StatsContainer = styled.div`
   border-radius: 10px;
   padding: 1rem 2rem;
   margin: 1rem 0 2rem;
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     justify-content: space-evenly;
   }
 `;

@@ -3,13 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
   }
 
   html {
     font-size: 16px;
     min-width: 375px;
-    min-height: 100vh;
   }
 
   body {
@@ -18,12 +19,41 @@ export const GlobalStyles = createGlobalStyle`
     transition: background 0.2s ease-in, color 0.2s ease-in;
   }
 
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   .container {
+    flex: 1;
     width: 95%;
     max-width: 730px;
     margin: 0 auto;
     @media (min-width: 768px) {
       width: 75%;
+    }
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    p {
+      font-size: 0.6875em;
+      line-height: 1.8;
+    }
+    a, a:visited {
+      color: ${({ theme }) => theme.text};
+    }
+    a:hover, a:focus {
+      opacity: 0.8;
+    }
+    @media {
+      p {
+        font-size: 0.8125rem;
+      }
     }
   }
 `;

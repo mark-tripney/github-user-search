@@ -79,6 +79,25 @@ export const App = () => {
         />
         <Main userInfo={userInfo} />
       </div>
+      <footer className="page-footer">
+        <p>
+          Coded by{' '}
+          <a href="https://marktripney.com" target="_blank" rel="noreferrer">
+            Mark Tripney
+          </a>
+          .
+          <br />
+          Based on a design by{' '}
+          <a
+            href="https://www.frontendmentor.io/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Frontend Mentor
+          </a>
+          .
+        </p>
+      </footer>
     </ThemeProvider>
   );
 };

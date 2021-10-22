@@ -12,7 +12,7 @@ const FooterContainer = styled.footer`
   align-items: center;
   gap: 1em 1em;
   margin-bottom: 3rem;
-  @media (min-width: 768px) {
+  @media (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
     div:nth-child(2) {
       grid-column: 1/2;
