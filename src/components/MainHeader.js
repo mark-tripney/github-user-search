@@ -16,27 +16,26 @@ const Header = styled.header`
     font-size: 1.625em;
     font-weight: 900;
   }
-  @media (min-width: 768px) {
-    margin: 2rem 0 1rem;
-  }
 `;
 
 const ViewModeContainer = styled.div`
   display: flex;
   align-items: center;
-  &:hover {
-    cursor: pointer;
-  }
-  &:hover * {
-    color: ${({ theme }) => theme.viewModeHoverColor};
-    fill: ${({ theme }) => theme.viewModeHoverColor};
-  }
+  outline: none;
   p {
     margin-right: 0.5em;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     font-size: 0.8125em;
     font-weight: 700;
+  }
+  @media (hover: hover) {
+    /* Prevent 'sticky hover' on touch devices */
+    &:hover * {
+      cursor: pointer;
+      color: ${({ theme }) => theme.viewModeHoverColor};
+      fill: ${({ theme }) => theme.viewModeHoverColor};
+    }
   }
 `;
 
@@ -45,6 +44,7 @@ export const MainHeader = (props) => {
     <Header>
       <h1>devfinder</h1>
       <ViewModeContainer
+        className="viewmode-div"
         role="button"
         onClick={props.onViewModeClick}
         tabIndex={0}
